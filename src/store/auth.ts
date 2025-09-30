@@ -12,11 +12,13 @@ export const useAuthStore = defineStore("auth", {
       this.token = res.data.data.token;
       localStorage.setItem("token", this.token);
       this.email = res.data.data.email;
+      localStorage.setItem("email", this.email);
     },
     logout() {
       this.email = null;
       this.token = "";
       localStorage.removeItem("token");
+      localStorage.removeItem("email");
     },
   },
 });
